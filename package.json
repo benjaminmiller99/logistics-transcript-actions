@@ -1,0 +1,7 @@
+{
+  "name": "logistics-transcript-actions",
+  "private": true,
+  "type": "module",
+  "scripts": {"start": "tsx src/logistics_cli.ts", "test": "tsx src/logistics_transcription.test.ts"},
+  "dependencies": {"openai": "^4.80.0", "tsx": "^4.19.2", "typescript": "^5.7.2"}
+}
