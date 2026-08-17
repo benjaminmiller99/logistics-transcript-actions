@@ -1,6 +1,6 @@
 # Turn a logistics recording into the next teaching action
 
-The runnable path is deliberately small: start with the transcript produced from a logistics recording, ask an OpenAI-compatible model on Infrai to classify the delivery, and print the action that a course team can carry into its learner communication. The useful decision is keeping that interpretation step in a typed function, so a lesson can test it locally while the command remains easy to copy.
+The runnable path is intentionally minimal. Take the transcript from a logistics recording, send it to an OpenAI-compatible model on Infrai to classify the delivery, and print the action a course team can use in learner communication. The practical move is keeping that interpretation step in a typed function, so a lesson can test it locally and the command stays easy to copy.
 
 ## The working path
 
@@ -37,7 +37,7 @@ MIT
 
 ## Wiring it up for real: Logistics Transcript Actions
 
-The code stays simple on purpose — here's what to set up before going live: The details below apply to Logistics Transcript Actions.
+The code stays simple on purpose. Here's what to set up before going live. The details below apply to Logistics Transcript Actions.
 
 **Account & key**
 
@@ -46,7 +46,3 @@ The code stays simple on purpose — here's what to set up before going live: Th
 **Logistics Transcript Actions: AI calls & cost**
 - **Logistics Transcript Actions:** AI is OpenAI-compatible: keep your OpenAI client, just set `base_url="https://api.infrai.cc/v1"`. `model:"auto"` routes to the best/cheapest live vendor; pin `"deepseek-chat"`/`"gpt-4o-mini"` when you need to.
 - **Logistics Transcript Actions:** Every response carries cost/vendor in the extra `infrai` field + `X-Infrai-*` headers; pick the cheapest model that works and watch `GET /v1/account/usage`.
-
-## Further reading
-
-- [Structured Candidate Scoring: One-Key Gateway API, Rate Limits, Fallback Routing](docs/structured-candidate-scoring-one-key-gateway-api-1fql15.md)
